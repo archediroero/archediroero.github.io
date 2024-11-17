@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz cumpleaños Mafe 🤗🌹</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para el reproductor horizontal */
+        .audio-container {
+            width: 100%; /* Abarca toda la anchura de la pantalla */
+            max-width: 500px; /* Tamaño máximo para no ser excesivamente grande */
+            margin: 20px auto; /* Centrado en la página */
+            background: linear-gradient(135deg, #ff99cc, #ffcc00, #66ccff); /* Colores de cumpleaños */
+            padding: 10px 20px;
+            border-radius: 30px; /* Bordes redondeados */
+            display: flex;
+            justify-content: space-between; /* Espaciado entre los botones */
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-container button {
+            background-color: #fff;
+            border: none;
+            color: #333;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .audio-container button:hover {
+            background-color: #ffcc00;
+            color: #fff;
+        }
+
+        .audio-container .play {
+            background-color: #66ccff;
+        }
+
+        .audio-container .pause {
+            background-color: #ff99cc;
+        }
+
+        .audio-container .stop {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Música de fondo con reproductor horizontal -->
+    <div class="audio-container">
+        <h3 style="font-size: 16px; color: #fff;">Feliz Cumpleaños Mafe 🎉</h3>
+        <audio id="audio" loop>
+            <source src="Feliz Cumpleaños Mafe.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <!-- Botones para controlar la música -->
+        <button class="play" onclick="playAudio()">Reproducir</button>
+        <button class="pause" onclick="pauseAudio()">Pausar</button>
+        <button class="stop" onclick="stopAudio()">Detener</button>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="outside">
+                <h1>Happy Birthday</h1>
+                <h3>.</h3>
+            </div>
+            <div class="inside">
+                <img src="cakegif.gif"/>
+                <h3>¡Hola mafe 🤗, te deseo un bello y bonito cumpleaños que la pases bien un abrazo!</h3>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="frames frame1">
+                <img src="img1.png" alt="">
+                <p>Siempre iluminas nuestras pantallas con tu sonrisa, ¡que nunca te falte esa luz que nos contagia!</p>
+            </div>
+            <div class="frames frame2">
+                <img src="img2.png" alt="">
+                <p>Aunque haya días grises, tú sigues brillando y dando alegria.¡Tienes una bella comunidad que esta contigo!</p>
+            </div>
+            <div class="frames frame3">
+                <img src="img3.png" alt="">
+                <p>Gracias por dejarme ser parte de tu circulo de amigos.¡Eres una gran amiga feliz cumpleaños mafe 😊!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funciones para controlar la música
+        var audio = document.getElementById("audio");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0; // Vuelve al inicio
+        }
+    </script>
+
+</body>
+</html>
