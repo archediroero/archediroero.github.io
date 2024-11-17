@@ -1,203 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
-
-* {
+*{
     padding: 0;
     margin: 0;
     font-family: 'Bodoni Moda', serif;
 }
-
-body {
+body{
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bday.gif);
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(bday.gif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
-
-.container {
+.container{
     perspective: 1000px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-
-.card {
+.card{
     width: 280px;
     height: 360px;
-    position: relative;
-    top: 0;
-    transition: 0.3s;
-    transform-style: preserve-3d;
+    position: absolute;
+    top: 100px;
+    left: 230px;
+    transition: ;
+    transform-style:;
 }
-
-.card:hover {
+.card:hover{
     transform: rotateY(180deg);
 }
-
-.block {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-top: 20px;
-    gap: 15px;
+.block{
+    position: absolute;
+    top:200px;
+    right: 600px;
+    perspective: 800px;
 }
-
-.outside,
-.inside {
+.outside,.inside{
     width: 100%;
     height: 100%;
     border-radius: 20px;
     text-align: center;
     padding: 1.5rem;
 }
-
-.outside {
+.outside{
     background-color: blanchedalmond;
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
     position: absolute;
     backface-visibility: hidden;
 }
-
-.outside h1 {
-    font-size: 2rem;
+.outside h1{
+    font-size: 3rem;
     font-weight: bold;
     color: salmon;
     margin-bottom: 30px;
 }
-
-.inside {
+.inside{
     background-color: rgb(255, 244, 79);
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
     transform: rotateY(180deg);
 }
-
-.inside h3 {
-    font-size: 1rem;
+.inside h3{
+    font-size: 1.2rem;
     font-weight: bold;
     margin-top: 20px;
 }
-
-.frames {
-    width: 150px;
+.frames{
+    width: 400px;
     height: 150px;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.8rem;
+    justify-content: space-around;
+    padding: 0 0.8rem;
+
     transform: rotateY(-230deg) rotateX(20deg);
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
+    position: absolute;
 }
-
-.frames img {
-    width: 80px;
-    height: 80px;
+.frames img{
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
-
-.frames p {
-    font-size: 0.9rem;
-    font-weight: bold;
+.frames p{
+   font-size: 20px;
+   font-weight: bold;
+   transform: rotateY(180deg);
 }
-
-.frames:nth-child(1) {
+.frames:nth-child(1)
+{
+    top:-130px;
+    z-index: -1;
     background-color: coral;
 }
-
-.frames:nth-child(2) {
+.frames:nth-child(2){
     background-color: goldenrod;
 }
-
-.frames:nth-child(3) {
+.frames:nth-child(3)
+{
+    top:110px;
     background-color: burlywood;
-}
-
-.audio-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    background: linear-gradient(135deg, #ff99cc, #ffcc00, #66ccff);
-    padding: 10px 20px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.audio-container button {
-    background-color: #fff;
-    border: none;
-    color: #333;
-    padding: 8px 12px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 5px;
-    transition: background-color 0.3s;
-}
-
-.audio-container button:hover {
-    background-color: #ffcc00;
-    color: #fff;
-}
-
-.audio-container .play {
-    background-color: #66ccff;
-}
-
-.audio-container .pause {
-    background-color: #ff99cc;
-}
-
-.audio-container .stop {
-    background-color: #ff3333;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-    }
-
-    .block {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .frames {
-        width: 100%;
-        height: auto;
-    }
-
-    .frames img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .frames p {
-        font-size: 14px;
-    }
-
-    .audio-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .audio-container button {
-        width: 100%;
-        margin: 5px 0;
-    }
 }
