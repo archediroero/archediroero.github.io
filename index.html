@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Un pequeño detalle</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+    .botones {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      text-align: center;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 5px #000;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ff4081;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e73370;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+      z-index: 1;
+    }
+    iframe.activo {
+      display: block;
+    }
+    /* Botón de volver */
+    #volver {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10000;
+      display: none;
+      background: #333;
+      color: #fff;
+      font-size: 16px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+    #volver:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="botones" id="menu">
+    <h1>🎉 Feliz cumpleaños Cathe 🎂</h1>
+    <button onclick="mostrar('iframe1','Birthday cathe/Birthday-master/index.html')">🎂 Sorpresa 1</button>
+    <button onclick="mostrar('iframe2','feliz cumple/index.html')">🎉 Sorpresa 2</button>
+  </div>
+
+  <!-- iframes vacíos al inicio -->
+  <iframe id="iframe1"></iframe>
+  <iframe id="iframe2"></iframe>
+
+  <!-- Botón de volver -->
+  <button id="volver" onclick="volverInicio()">⬅ Volver</button>
+
+  <script>
+    function mostrar(id, url) {
+      // Ocultar menú
+      document.getElementById("menu").style.display = "none";
+      // Mostrar botón de volver
+      document.getElementById("volver").style.display = "block";
+
+      // Ocultar todos los iframes
+      document.querySelectorAll("iframe").forEach(el => {
+        el.classList.remove("activo");
+        el.src = "";
+      });
+
+      // Recargar el iframe seleccionado
+      const iframe = document.getElementById(id);
+      iframe.src = url;
+      iframe.classList.add("activo");
+    }
+
+    function volverInicio() {
+      // Ocultar todos los iframes
+      document.querySelectorAll("iframe").forEach(el => {
+        el.classList.remove("activo");
+        el.src = "";
+      });
+
+      // Mostrar menú y ocultar botón volver
+      document.getElementById("menu").style.display = "block";
+      document.getElementById("volver").style.display = "none";
+    }
+  </script>
+</body>
+</html>
