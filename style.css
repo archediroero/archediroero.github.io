@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #ff00ff;
+  --secondary-color: #00ffff;
+  --text-color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 2s ease;
+}
+
+body.sad-theme {
+  background-color: #1a1a2e;
+}
+
+.sad-theme .wishes {
+  color: #a5a5a5;
+}
+
+.sad-theme .star {
+  animation: slowTwinkle 4s infinite;
+}
+
+@keyframes slowTwinkle {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle var(--duration) infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.start-btn,
+.choice-btn {
+  padding: 15px 30px;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.start-btn {
+  animation: glow 2s infinite;
+}
+
+.choice-btn {
+  margin: 10px;
+  font-size: 18px;
+  opacity: 0;
+}
+
+.start-btn:hover,
+.choice-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.wishes {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px;
+  opacity: 0;
+  /* CAMBIO A FUENTE NORMAL: Verdana */
+  font-family: "Verdana", sans-serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.emoji {
+  position: absolute;
+  font-size: 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color),
+    0 0 30px var(--primary-color);
+}
+
+.message-container {
+  max-width: 90%;
+  width: 800px;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(var(--random-x));
+    opacity: 0;
+  }
+}
+
+.mute-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mute-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
